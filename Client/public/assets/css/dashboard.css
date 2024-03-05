@@ -1,0 +1,409 @@
+.dash-body{
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+}
+
+/* = = = = = =  = = = = = = DASHBOARD CONTAINER STYLING = = = = = = = = = = = = */
+.dash-section{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.dash-container{
+    width: inherit;
+    height: 95%;
+    justify-content: center;
+}
+
+/* = = = = = = DashBoard Start here Cont Styling = = = = = = */
+.dash-start-here{
+    width: 75%;
+    justify-content: center;
+}
+.dash-text-btn > h2{
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--space-blue);
+    font-family: "Poppins", serif;
+}
+.dash-text-btn > h2 > span{
+    font-family: "Kalnia", sans-serif;
+    text-transform: uppercase;
+    color: var(--royal-blue);
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px var(--royal-blue);
+}
+.try-btn{
+    width: 40%;
+    align-self: center;
+}
+.dash-start-here-illus{
+    width: 40%;
+    aspect-ratio: 1;
+    background: url("/img/DashBoard-Illus.svg");
+    background-position: center;
+    background-size: cover;
+    border-radius: 10%;
+}
+/*= = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+.dash-notes-cont{
+    position: relative;
+    top: 3%;
+    width: 95%;
+    height: 80%;
+    justify-content: space-evenly;
+    /* border: 2px dashed red; */
+}
+.notes-cont {
+    width: 98%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(25% - 1rem), 1fr));
+    grid-template-rows: repeat(3, minmax(calc(33.3% - 1rem), 1fr));
+    grid-gap: .8rem;
+    padding: .5rem;
+    /* border: 2px dashed green; */
+}
+.notes-cont::-webkit-scrollbar { width: 3px; }
+.notes-cont::-webkit-scrollbar-track { background: transparent; }
+.notes-cont::-webkit-scrollbar-thumb {
+    background-color: var(--space-blue); 
+    border-radius: 16px;
+}
+
+/* = = = = = = DashBoard Add 1st Note Cont Styling = = = = = = */
+.dash-create-first-note{
+    justify-content: center;
+    width: inherit;
+}
+.dash-create-first-note-illus{
+    /* border: 2px dashed green; */
+    width: 36%;
+    aspect-ratio: 1;
+    background: url("/img/Add-1st-Note-Illus.svg");
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    border-radius: 40px;
+}
+.dash-creat-first-note-text-btn{
+    justify-content: center;
+    gap: .3rem;
+}
+.dash-creat-first-note-text-btn > h2{
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: "Poppins", sans-serif;
+}
+.dash-creat-first-note-text-btn > a{
+    border: 1px solid var(--royal-blue);
+    border-radius: 8px;
+    width: 48%;
+    height: 2.2rem;
+    color: aliceblue;
+    font-family: "Poppins", sans-serif;
+    background-color: var(--royal-blue);
+    justify-content: center;
+}
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+
+.note-cards {
+    height: 100%; /* Full height of the grid cell */
+    width: 100%; /* Full width of the grid cell */
+    border: 1px solid var(--space-blue);
+    border-radius: 20px;
+    align-items: center;
+    background: var(--space-blue);
+    padding: 0.3rem;
+}
+
+.note-cards .note-cards-body{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: .2rem;
+    /* border: 1px dashed aqua; */
+}
+.note-cards-body .note-cards-title{
+    width: auto;
+    height: auto;
+    margin-block: .3rem;
+    border-radius: 5px;
+    /* border: 1px dashed green; */
+    overflow: hidden;
+    justify-content: flex-start;
+    font-family: "Poppins", sans-serif;
+    color: aliceblue;
+    font-size: .8rem;
+    font-weight: 400;
+    text-align: center;
+}
+.note-cards-body .note-cards-text{
+    width: 98%;
+    height: auto;
+    padding: .3rem;
+    /* border: 1px dashed red; */
+    color: aliceblue;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 12px;
+    font-weight: 200;
+    font-family: "Poppins", sans-serif;
+}
+
+.dash-search-add-cont{
+    justify-content: space-around;
+    width: 98%;
+    height: auto;
+    padding-inline: 3px;
+}
+.dash-search-add-cont > form{ width: 70%; }
+.dash-search-add-cont > form > input{
+    height: 2rem;
+    width: 100%;
+    font-size: 14px;
+    padding-inline: .3rem;
+    border-radius: 5px;
+    border: 1px solid var(--space-blue);
+}
+.dash-search-add-cont > a{
+    font-size: 12px;
+    background: var(--space-blue);
+    width: 12%;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+    color: aliceblue;
+    font-family: 'Poppins';
+    border: 1px solid var(--space-blue);
+    border-radius: 5px;
+}
+
+.dash-page-nav-cont{
+    position: relative;
+    top: 5%;
+    width: max-content;
+    height: 8%;
+    padding: .3rem;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px dashed blue; */
+}
+
+.page-nav{
+    /* border: 1px dashed red; */
+    width: 100%;
+    height: 100%;
+    gap: .5rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.page-nav-item{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:none;
+    background-color: var(--prusian-blue);
+    padding: .3rem .7rem;
+    border-radius: 5px;
+    font-family: "Poppins",sans-serif;
+    color: aliceblue;
+}
+.page-nav-item.disabled{ background-color: var(--prusian-blue-lighter); }
+.page-nav-item .page-nav-link{ color: aliceblue; }
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+
+/* = = = = = = = = = = = = = MEDIA QUERIES = = = = = = = = = = = = = = */
+@media (max-width: 1100px){
+    .dash-start-here{ width: 90%; }
+    .dash-create-first-note-illus{ width: 45%; }
+
+    .dash-search-add-cont{
+        justify-content: space-between;
+        width: 99%;
+    }
+
+    .page-nav-item .page-nav-link{ font-size: .8rem; }
+}
+
+@media (max-width: 880px){
+    .dash-container{ justify-content: center; }
+    .dash-start-here{ width:100%; }
+    .dash-text-btn > h2{ font-size: 1.3rem; }
+    .dash-text-btn > h2 > span{ font-size: 1.8rem; }
+    .try-btn{ width: 55%; }
+    .dash-start-here-illus{ width: 50%; }
+
+    .dash-create-first-note-illus{ width: 50%; }
+    .dash-creat-first-note-text-btn > h2{ font-size: 1.15rem; }
+    .dash-creat-first-note-text-btn > a{
+        width: 45%;
+        height: 1.8rem;
+        font-size: .9rem;
+    }
+
+    .dash-notes-cont{
+        justify-content: space-around;
+        height: 80%;
+        width: 98%;
+    }
+
+    .notes-cont {
+        grid-template-columns: repeat(3, minmax(calc(33.3% - 1rem), 1fr));
+        grid-template-rows: repeat(3, minmax(calc(33.3% - 1rem), 1fr));
+        overflow-y: scroll;
+    }
+
+    .dash-search-add-cont > form > input{
+        height: 1.8rem;
+        font-size: 11px;
+    }
+    .dash-search-add-cont > a{
+        font-size: 10px;
+        width: 20%;
+        height: 1.6rem;
+    }
+
+    .dash-page-nav-cont{ padding: 0; }
+    .page-nav-item{
+        padding: .1rem .5rem;
+        border-radius: 5px;
+        font-family: "Poppins",sans-serif;
+        color: aliceblue;
+        gap: .5rem;
+    }
+}
+
+
+
+@media (max-width: 590px){
+    .dash-container{ height: 100%; }
+    .dash-notes-cont{ width: 100%; }
+    .dash-create-first-note-illus{ width: 60%; }
+    .dash-creat-first-note-text-btn > h2{ font-size: 1rem; }
+    .dash-creat-first-note-text-btn > a{
+        width: 60%;
+        height: 1.6rem;
+        font-size: .8rem;
+    }
+
+    .dash-search-add-cont{
+        justify-content: space-between;
+        width: 99%;
+        height: auto;
+        padding-inline: 3px;
+    }
+    .dash-search-add-cont > form{ width: 70%; }
+    .dash-search-add-cont > form > input{
+        height: 1.5rem;
+        width: 100%;
+        font-size: 12px;
+        padding-inline-start: .3rem;
+        border-radius: 5px;
+        border: 1px solid var(--space-blue);
+    }
+    .dash-search-add-cont > a{
+        font-size: 9px;
+        background: var(--space-blue);
+        width: 25%;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.2rem;
+        color: aliceblue;
+        font-family: 'Poppins';
+        border: 1px solid var(--space-blue);
+        border-radius: 5px;
+    }
+
+    .notes-cont {
+        grid-template-columns: repeat(auto-fill, minmax(calc(50% - 1rem), 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(calc(33.33% - 1rem), 1fr));
+    }
+}
+
+
+@media (max-width: 495px){
+    .dash-start-here{
+        width: 100%;
+        height: 70%;
+        flex-direction: column;
+        gap: .3rem;
+    }
+    .dash-start-here-illus{ width: 80%; } 
+    .dash-text-btn{
+        width: auto;
+        gap: .5rem;
+    }
+    .dash-text-btn > h2{ font-size: 1rem; }
+    .dash-text-btn > h2 > span{
+        font-size: 1.4rem;
+        letter-spacing: .1rem;
+    }
+    .try-btn{
+        width: 50%;
+        height: 1.5rem;
+    }
+    .dash-notes-cont{
+        width: 100%;
+        height: 80%;
+        margin: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .dash-create-first-note{
+        justify-content: center; 
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .dash-create-first-note-illus{ width: 85%; }
+    .dash-creat-first-note-text-btn > h2{ font-size: .9rem; }
+    .dash-creat-first-note-text-btn > a{ height: 1.7rem; }
+    
+    .notes-cont {
+        grid-template-columns: repeat(auto-fill, minmax(calc(50% - 1rem), 1fr));
+        grid-template-rows: repeat(6, minmax(calc(30% - 1rem), 1fr));
+        grid-gap: .5rem;
+    }
+    .note-cards {
+        width: 100%;
+        height: 100%;
+    }
+
+    .note-cards .note-cards-title{ font-size: .6rem; }
+    .note-cards .note-cards-text{ font-size: 8px; }
+
+    .page-nav-item .page-nav-link{ font-size: .7rem; }
+}
+
+@media (max-width: 1100px) and (min-height: 1000px) {
+    .notes-cont {
+        grid-template-columns: repeat(auto-fill, minmax(calc(33.3% - 1rem), 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(calc(25% - 1rem), 1fr));
+    }
+    .note-cards {
+        width: 100%;
+        height: 100%;
+    }
+}

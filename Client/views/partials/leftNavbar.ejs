@@ -1,0 +1,58 @@
+<nav class="left-nav flex">
+    <div class="left-nav-logo-close flex">
+        <a href="#" class="left-nav-logo"><h2>NOTIFY</h2></a>
+        <div class="closeMenu-btn flex">
+            <ion-icon name="chevron-back-circle-outline" id="closeMenu-icon"></ion-icon>
+        </div>
+    </div>
+    <ul class="left-nav-list flex">
+        <li class="left-nav-list-elem flex">
+            <div class="profile-info flex">
+                <div class="userName-greet">
+                    <h3 class="user-name">
+                        <% if(userName){ %>
+                            Hey, <%= userName %>...
+                        <% }else{ %>
+                            Hey, User...
+                        <% } %>
+                    </h3>
+                    <h5 class="user-email">
+                        <% if(userEmail){ %>
+                            <%= userEmail %>
+                        <% }else{ %>
+                            user@email.com
+                        <% } %>
+                    </h5>
+                </div>
+                <div class="profile-pic flex">
+                    <% if(profilePic){ %>
+                        <img src="<%= profilePic %>" alt="Img" width="60">
+                    <% }else{ %>
+                        <img src="/img/User-Profile02.png" alt="Img" width="60">
+                    <% } %>
+                </div>
+            </div>
+        </li>
+        <li class="left-nav-list-elem flex-column">
+            <nav class="top-nav-vertical flex-column">
+                <a href="/" class="left-nav-links">Home</a>
+                <a href="/dashboard" class="left-nav-links flex">Dashboard</a>
+                <a href="/about" class="left-nav-links flex">About Us</a>
+                <a href="/explore" class="left-nav-links flex">Explore</a>
+            </nav>
+        </li>
+        <li class="left-nav-list-elem">
+            <div class="left-nav-link-list flex-column">
+                <a href="#" class="left-nav-links flex">Profile</a>
+                <a href="#" class="left-nav-links flex">Settings</a>
+                <a href="#" class="left-nav-links flex">Feedback</a>
+                <% if(userName){ %>
+                    <a href="/logout" type="submit" id="logout-btn" class="left-nav-links flex">Log Out</a>
+                <% }else{ %>
+                    <a href="/auth/google" type="submit" id="login-btn" class="left-nav-links flex">Log In</a>
+                    <!-- <a href="/loginPage" type="submit" id="login-btn" class="left-nav-links flex">Log In</a> -->
+                <% } %>
+            </div>
+        </li>
+    </ul>
+</nav>

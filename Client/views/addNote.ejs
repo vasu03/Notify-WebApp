@@ -1,0 +1,22 @@
+<section class="viewNotes-section flex">
+    <div class="viewNotes-container flex-column">
+        <!-- Kind of Header showing Title of Note -->
+        <div class="noteTitle flex">
+            <h3>DASHBOARD / Add a new Note !!</h3>
+        </div>
+
+        <!-- Editor Area for the Note content -->
+        <div class="note-output flex">
+            <form action="/addNote" method="POST" class="note-output-form flex-column">
+                <input type="text" name="title" id="title" placeholder="Type your Note Title here..." required>
+                <textarea name="body" id="body" placeholder="Type your Note Text here..." rows="12" required></textarea>
+                <div class="actionBtn">
+                    <button type="submit" class="flex" aria-label="Add Note" id="AddBtn">
+                        <ion-icon name="checkmark-circle-outline"></ion-icon>    
+                        <h5>Add Note</h5>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

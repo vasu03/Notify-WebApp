@@ -1,0 +1,22 @@
+<section class="home-section flex">
+    <%- include('partials/leftNavbar') %>
+    <div class="home-container main-container flex">
+        <div class="home-cont-text flex-column">
+            <div class="notify-banner">
+                <h1>NOTIFY</h1>
+                <h5>Your Ideas, Your Way...</h5>
+            </div>
+            <% if(!userName){ %>
+                <div class="try-btn flex">
+                    <a href="/auth/google" type="submit" id="login-btn" class="flex">Try Notify for free...</a>
+                    <!-- <a href="/loginPage" type="submit" id="login-btn" class="flex">Try Notify for free...</a> -->
+                </div>
+            <% }else{ %>
+                <div class="try-btn flex">
+                    <a href="/dashboard" class="flex">Go to Dashboard...</a>
+                </div>
+            <% } %>
+        </div>
+        <div class="home-cont-illus flex"></div>
+    </div>
+</section>

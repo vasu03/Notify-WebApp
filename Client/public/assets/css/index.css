@@ -1,0 +1,415 @@
+.index-body{
+    display: flex;
+    width: 100vw;
+    height: max-content;
+    /* background: linear-gradient(-60deg ,rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url("/img/BG_Home_DesktopScreen.png"); */
+    background-color: rgba(143, 206, 218, 0.05);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* = = = = = = = = = = = = HEADER STYLING = = = = = = = = = = = */
+header{
+    z-index: 98;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ease-in;
+    background: rgba(197,234,241, 0.7);
+}
+@supports(backdrop-filter: blur(10px)){
+    header{
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+}
+header.move-up{
+    position: fixed;
+    top: -12vh;
+    transition: .5s ease-in;
+}
+.hamMenu-btn{
+    position: relative;
+    left: -15%;
+    width: max-content;
+    height: max-content;
+    justify-content: center;
+}
+.hamMenu-btn #ham-icon{
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--royal-blue);
+}
+
+.top-nav{
+    /* border: 2px dashed black; */
+    height: max-content;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+.top-nav-list{
+    /* border: 2px dashed yellow; */
+    list-style: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.top-nav-logo, .top-nav-sec-logo{
+    font-family: 'Kalnia', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    color: var(--royal-blue);
+}
+.top-nav-sec-logo{ display: none }
+.top-nav-links{
+    font-size: 1rem;
+    font-weight: 550;
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+    color: var(--space-blue);
+    justify-content: flex-start;
+}
+.top-nav-vertical{
+    display: none;
+}
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+
+/* = = = = = = = = = = = = HOME CONTAINER STYLING = = = = = = = = = = = */
+.home-section{
+    z-index: 97;
+    height: 100vh;
+    width: 100%;
+} 
+.home-container{
+    /* border: 2px dashed blue; */
+    width: inherit;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.home-cont-text{
+    width: max-content;
+    /* border: 2px dashed red; */
+    justify-content: center;
+}
+.notify-banner{
+    width: 100%;
+    /* border: 2px dashed blue; */
+}
+.notify-banner > h1{
+    font-family: 'Kalnia', serif;
+    color: var(--royal-blue);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--royal-blue);
+    letter-spacing: .2rem;
+    font-size: 5rem;
+    font-weight: 900;
+}
+.notify-banner > h5{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    width: max-content;
+    justify-content: center;
+    font-size: 1.1rem;
+    position: relative;
+    top: -15px;
+}
+.try-btn{
+    justify-content: center;
+    align-self: flex-start;
+    border: 2px solid var(--space-blue);
+    background-color: var(--space-blue);
+    width: 50%;
+    height: 2.3rem;
+    border-radius: 5px;
+}
+.try-btn > a{
+    font-size: .9rem;
+    color: aliceblue;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    justify-content: center;
+    width: 100%;
+}
+.home-cont-illus{
+    background: url("/img/Home-Illus.svg");
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    /* border: 2px dashed red; */
+    width: 35%;
+    aspect-ratio: 1;
+}
+
+/* = = =  Left Navigation Styling = = = */
+.left-nav{
+    z-index: 100;
+    height: 100%;
+    width: 25%;
+    left: -50%;
+    position: fixed;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    transition: .5s ease-in;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: rgba(197,234,241, 0.6);
+}
+
+.left-nav.active-reveal{
+    position: fixed;
+    left: 0;
+    transition: .5s ease-in;
+}
+@supports(backdrop-filter: blur(10px)){
+    .left-nav{
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
+.left-nav-logo-close{
+    /* border: 2px dashed red; */
+    width: 100%;
+    justify-content: space-around;
+}
+.closeMenu-btn{
+    width: max-content;
+    height: max-content;
+    justify-content: center; 
+}
+.closeMenu-btn #closeMenu-icon{
+    font-size: 25px;
+    font-weight: 900;
+    color: var(--royal-blue);
+}
+.left-nav-list{
+    flex-direction: column;
+    /* border: 2px dashed green; */
+    list-style: none;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+}
+.left-nav-logo-close{
+    margin-block: 1rem;
+}
+.left-nav-logo{
+    font-family: 'Kalnia', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    color: var(--royal-blue);
+}
+
+.left-nav-list-elem{
+    width: 90%;
+    justify-content: center;
+    align-items: flex-start;
+    /* border: 2px dashed green; */
+    height: max-content;
+}
+.left-nav-list-elem > .left-nav-link-list{
+    width: 100%;
+}
+.left-nav-list-elem > .top-nav-vertical{
+    width: 100%;
+}
+.left-nav-links{
+    width: 90%;
+    margin-block: .4rem;
+    padding-bottom: .2rem;
+    border-bottom: 1px solid var(--steel-blue);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: .9rem;
+    justify-content: flex-start;
+    color: var(--space-blue);
+}
+.profile-info{
+    border: 2px dashed blue;
+    width: 100%;
+    height: max-content;
+    position: relative;
+    top: 0;
+    left: 0;
+    justify-content: space-around;
+    margin-block-start: 1rem;
+    margin-block: .5rem;
+    padding-block: .5rem;
+    border-block-end: 1px solid var(--steel-blue);
+}
+.profile-pic{
+    /* border: 2px dashed red; */
+    width: 3rem;
+    aspect-ratio: 1;
+    border-radius: 50%; 
+    justify-content: center;
+}
+.profile-pic img{
+    width: 2.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.user-name{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color: var(--space-blue);
+}
+.user-email{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: .6rem;
+    color: var(--space-blue);
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+/* = = = = = = = = = = = = = MEDIA QUERIES = = = = = = = = = = = = = = */
+@media (max-width: 1100px){
+    .left-nav{ width: 35%; }
+}
+
+@media (max-width: 850px){
+    .top-nav-logo, .left-nav-logo{ font-size: 1.2rem; }
+    .top-nav-links, .left-nav-links{
+        font-size: .8rem;
+        font-weight: 500;
+    }
+    
+    .left-nav{
+        width: 40%;
+        left: -50%;
+    }
+    .notify-banner > h1{ font-size: 4rem; }
+    .notify-banner > h5{ font-size: 1rem; }
+    .try-btn{
+        width: 50%;
+        height: 2.1rem;
+    }
+    .try-btn > a{ font-size: .7rem; }
+    .home-cont-illus{
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 690px){
+    .top-nav-logo, .left-nav-logo{ font-size: 1rem; }
+    .top-nav-links, .left-nav-links{
+        font-size: .7rem;
+        font-weight: 500;
+    }
+    
+    .left-nav{
+        width: 40%;
+        left: -60%;
+    }
+
+    .notify-banner > h1{ font-size: 3rem; }
+    .notify-banner > h5{ font-size: .9rem; }
+    .try-btn{
+        width: 60%;
+        height: 2rem;
+    }
+    .try-btn > a{ font-size: .65rem; }
+
+    
+}
+
+@media (max-width: 580px){
+    .top-nav{
+        width: max-content;
+    }
+    .top-nav-list{
+        gap: .3rem;
+    }
+    .top-nav-links, .left-nav-links{
+        font-size: .6rem;
+    }
+    .top-nav-logo, .left-nav-logo{ font-size: .9rem; }
+    .left-nav{ width: 40%; }
+
+    .hamMenu-btn #ham-icon{ font-size: 20px; }
+    .closeMenu-btn #closeMenu-icon{ font-size: 20px; }
+
+    .left-nav{ width: 45%; }
+    .user-name{ font-size: 1rem; }
+    .user-email{ font-size: .7rem; }
+}
+
+@media (max-width: 495px){
+    .header{ 
+        justify-content: flex-start; 
+        height: 7vh;
+    }
+    .header .top-nav-sec-logo{ 
+        display: flex;
+        font-size: 1rem; 
+    
+    }
+    .hamMenu-btn{
+        justify-content: center; 
+        left: 0%; 
+        margin-inline: 1rem;
+    }
+    .header .top-nav{ display: none; }
+    .top-nav-logo{ display: none; } 
+
+    .left-nav-logo{ font-size: 1.1rem; }   
+    .left-nav{
+        width: 70%;
+        left: -100%;
+    }
+    .left-nav-links{ font-size: .8rem;}
+    .left-nav .top-nav-vertical{
+        height: auto;
+    } 
+    .profile-info{
+        justify-content: space-between;
+    }
+    
+
+    .home-container{
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+    .notify-banner > h1{ 
+        letter-spacing: .3rem;
+        font-size: 3rem;
+     }
+    .notify-banner > h5{
+        display: flex;
+        width: 100%;
+        top: -8px; 
+        font-size: .8rem;
+        justify-content: center; 
+    }
+    .try-btn{
+        width: 100%;
+        height: 2rem;
+    }
+    .try-btn > a{ font-size: .7rem; }
+    .home-cont-illus{
+        width: 80%;
+    } 
+}
+
+@media (max-width: 310px){
+    .left-nav{
+        width: 100%;
+    }
+}
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */

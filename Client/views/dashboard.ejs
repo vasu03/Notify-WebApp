@@ -1,0 +1,112 @@
+<section class="dash-section flex">
+    <%- include('partials/leftNavbar') %>
+    <div class="dash-container main-container flex-column">
+        <% if(userName){ %>
+            <div class="dash-notes-cont flex-column">
+                <% if(notes.length > 0) { %>
+                    <div class="dash-search-add-cont flex">
+                        <form action="POST" class="navigation-form flex" role="search" action="/dashboard/search">
+                            <input type="search" name="searchTerm" placeholder="Search Here ...." aria-label="SearchBox">
+                        </form>
+                        <a href="/addNote" class="add-notes-btn">+ Add Notes</a>
+                    </div>
+                <% } %>
+                <div class="notes-cont flex">
+                    <!-- start of if-else for notes showing -->
+                    <% if(notes.length > 0) { %>        <!--notes.length > 0 -->
+                        <% notes.forEach(note => { %>  
+                            <div class="note-cards flex-column">
+                                <a href="/dashboard/item/<%= note._id %>" class="note-cards-body flex-column">
+                                    <h5 class="note-cards-title flex"><%= note.title %></h5>
+                                    <p class="note-cards-text"><%= note.body %></p>
+                                </a>
+                            </div>
+                        <% }); %> 
+                    <% } else { %>
+                        <div class="dash-create-first-note flex">
+                            <div class="dash-create-first-note-illus flex"></div>
+                            <div class="dash-creat-first-note-text-btn flex-column">
+                                <h2>
+                                    Don't have any notes yet ?<br>
+                                    Start here by adding your first Note...
+                                </h2>
+                                <a href="/addNote" class="add-notes-btn flex">+ Your First Note</a>
+                            </div>
+                        </div>
+                    <% } %> 
+                    <!-- end of if-else -->
+                </div>
+            </div>
+    
+            <div class="dash-page-nav-cont flex">
+                <!-- Check if there are any notes available -->
+                <% if(notes.length > 0){ %>
+                    <!-- Create a navigation list if there are notes -->
+                    <ul class="page-nav flex">
+                        <!-- Check if the current page is the first page -->
+                        <% if(current == 1) { %>
+                            <!-- Display disabled navigation link for previous if on the first page -->
+                            <li class="page-nav-item disabled"><a class="page-nav-link">< Prev</a></li>
+                        <% } else { %>
+                            <!-- Display links for the first page and previous page if not on the first page -->
+                            <li class="page-nav-item"><a class="page-nav-link" href="/dashboard?page=1"><< First</a></li>
+                            <li class="page-nav-item"><a class="page-nav-link" href="/dashboard?page=<%= current - 1 %>">< Prev</a></li>
+                        <% }  %>
+                
+                        <!-- Calculate the starting point for the page number iteration -->
+                        <% let i = (Number(current) > 2 ? Number(current) - 1 : 1) %>
+                
+                        <!-- Display ellipsis (...) if the starting point is not 1 -->
+                        <% if (i !== 1 ) { %>
+                            <li class="page-nav-item"><a class="page-nav-link" href="#">...</a></li>
+                        <% } %>
+                
+                        <!-- Iterate over the page numbers to display in the navigation -->
+                        <% for (; i <= (Number(current) + 1) && i <= pages; i++) { %>
+                            <!-- Check if the current iteration is the current page or if there are notes on that page -->
+                            <% if (i == current || notesOnPage[i - 1]) { %>
+                                <!-- Display active link for the current page or if there are notes on that page -->
+                                <li class="page-nav-item"><a class="page-nav-link" href="/dashboard?page=<%= i %>"><%= i %></a></li>
+                            <% } else { %>
+                                <!-- Display disabled link if there are no notes on that page -->
+                                <li class="page-nav-item disabled"><span class="page-nav-link"><%= i %></span></li>
+                            <% } %>
+                
+                            <!-- Display ellipsis (...) if reaching the end of the displayed range and there are more pages -->
+                            <% if(i == Number(current) + 4 && i < pages) { %>
+                                <li class="page-nav-item"><a class="page-nav-link" href="#">...</a></li>
+                            <% } %>
+                        <% } %>
+                
+                        <!-- The logic for working of the NEXT Button in page-nav -->
+                        <!-- Check if there is a next page and if there are notes on the next page -->
+                        <% if (current < pages && notesOnNextPage) { %>
+                            <!-- Display active link for the next page if conditions are met -->
+                            <li class="page-nav-item"><a href="/dashboard?page=<%= Number(current)+1 %>" class="page-nav-link">Next ></a></li>
+                        <% } else { %>
+                            <!-- Display disabled link for the next page if conditions are not met -->
+                            <li class="page-nav-item disabled"><a class="page-nav-link">Next ></a></li>
+                        <% } %>
+                    </ul>
+                <% } %>
+            </div>
+            
+            
+            
+        <% }else{ %> 
+            <div class="dash-start-here flex">
+                <div class="dash-start-here-illus"></div>
+                <div class="dash-text-btn flex-column">
+                    <h2>
+                        Just landed on <span>Notify</span>? <br>
+                        Dive in and take your first step !!
+                    </h2>
+                    <div class="try-btn flex">
+                        <a href="/auth/google" type="submit" id="login-btn" class="flex">Start Here...</a>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+        
+    </div>
+</section>

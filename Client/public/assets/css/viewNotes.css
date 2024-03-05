@@ -1,0 +1,291 @@
+.viewNotes-body{
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+}
+
+/* VIEW-NOTES CONTAINER STYLING */
+.viewNotes-section{
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+}
+.viewNotes-container{
+    width: 98%;
+    height: max-content;
+    gap: 2rem;
+}
+/* ====================== */
+
+.back-to-dash-btn{
+    width: max-content;
+    height: max-content;
+    justify-content: center;
+    align-items: center;
+    margin-inline: .5rem;
+}
+
+.back-to-dash-btn > a > ion-icon{
+    color: var(--space-blue);
+    font-size: 1.5rem;
+}
+
+.header .top-nav{ display: flex; }
+.top-nav-logo{ 
+    display: flex;
+    margin-inline: 1rem; 
+}
+
+
+.noteTitle{
+    width: inherit;
+    height: max-content;
+    padding-inline: 1rem;
+    justify-content: space-between;
+}
+
+.noteTitle > h3{
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    color: var(--space-blue);
+}
+
+.actionBtn{
+    width: 10%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.actionBtn > button{
+    width: 100%;
+    height: 100%;
+    padding-block: .3rem;
+    justify-content: center;
+    gap: .2rem;
+    border-radius: 5px;
+    background: var(--space-blue);
+    border: 1px solid var(--space-blue);
+    cursor: pointer;
+}
+
+.actionBtn > button > ion-icon[name="trash-outline"]{
+    color: orangered;
+    font-size: 18px;
+}
+.actionBtn > button > ion-icon[name="checkmark-circle-outline"]{
+    color: lawngreen;
+    font-size: 18px;
+}
+
+.actionBtn > button > h5{
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    color: aliceblue;
+    font-weight: 500;
+}
+
+.note-output{
+    width: inherit;
+    height: max-content;
+    justify-content: center;
+}
+.note-output-form{
+    width: 100%;
+    height: max-content;
+    padding: .3rem;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.note-output-form > #title{
+    width: 100%;
+    height: max-content;
+    padding: .4rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid var(--space-blue);
+}
+
+.note-output-form > #body{
+    width: 100%;
+    height: 70%;
+    padding: .4rem;
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    border: 1px solid var(--space-blue);
+    border-radius: 5px;
+    resize: none;
+}
+
+.note-output-form > #body::-webkit-scrollbar { width: 5px; }
+.note-output-form > #body::-webkit-scrollbar-track { 
+    background: #dddddd; 
+    padding: 5rem; 
+}
+.note-output-form > #body::-webkit-scrollbar-thumb {
+    background-color: var(--space-blue); 
+    border-radius: 16px;
+}
+
+
+/* = = = = = DELETE NOTE CONFIRMATION PROMPT STYLING = = = = = */
+.confirmation-prompt {
+    z-index: 1000;
+    width: 30%;
+    height: 30%;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgba(197,234,241, 0.7);
+    transition: .5s ease;
+}
+@supports(backdrop-filter: blur(5px)){
+    .confirmation-prompt{
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+    }
+}
+.confirmation-prompt.prompt-active {
+    top: 25%;
+    transition: .5s ease;
+}
+.confirmation-prompt > p {
+    color: var(--space-blue);
+    font-family: "Poppins", sans-serif;
+}
+
+.confirmation-buttons {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+.confirmation-buttons button{
+    width: 40%;
+    padding-block: .3rem;
+    border-radius: 8px;
+    border: 1px solid var(--space-blue);
+    cursor: pointer;
+}
+.confirmation-buttons > form{
+    width: 40%;
+}
+.confirmation-buttons form #confirmDeleteBtn{
+    width: 100%;
+    justify-content: center;
+    background: var(--space-blue);
+}
+#confirmDeleteBtn > h5{
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    color: aliceblue;
+    font-weight: 500;
+}
+#confirmDeleteBtn > ion-icon[name="trash-outline"]{
+    color: orangered;
+    font-size: 18px;
+}
+#cancelBtn{
+    justify-content: center;
+    background: transparent;
+}
+#cancelBtn > h5{
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    color: var(--space-blue);
+    font-weight: 500;
+}
+#cancelBtn > ion-icon[name="close-circle-outline"]{
+    color: var(--space-blue);
+    font-size: 18px;
+}
+
+.confirmation-overlay {
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 1s ease;
+}
+/* = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+
+/* = = = = = = = = = = = = = MEDIA QUERIES = = = = = = = = = = = = = = */
+@media (max-width: 1200px){
+    .confirmation-prompt{ width: 40%; }
+}
+
+@media (max-width: 850px){
+    .noteTitle > h3{ font-size: .9rem; }
+    
+    .actionBtn{ width: 15%; }
+    .actionBtn > button > ion-icon{ font-size: 16px; }
+    .actionBtn > button > h5{ font-size: 12px; }
+
+    .confirmation-prompt{ width: 50%; }
+}
+
+@media (max-width: 595px){
+    .viewNotes-container{ height: 80%; padding: 0; }
+
+    .noteTitle{ padding-inline: .6rem; }
+    .noteTitle > h3{ font-size: .9rem; }
+    
+    .actionBtn{ width: 20%; }
+    .actionBtn > button > ion-icon{ font-size: 14px; }
+    .actionBtn > button > h5{ font-size: 10px; }
+
+    .note-output-form > #title{ font-size: 16px; }
+    .note-output-form > #body{ font-size: 12px; }
+
+    .confirmation-prompt{ 
+        width: 60%; 
+        padding: 15px;
+    }
+}
+
+@media (max-width: 490px){
+    .noteTitle{ padding-inline: .4rem; }
+    .noteTitle > h3{ font-size: .8rem; }
+    
+    .actionBtn{ width: 25%; }
+
+    .note-output-form > #title{ font-size: 14px; }
+
+    .confirmation-prompt{ 
+        width: 75%; 
+        padding: 10px;
+    }
+    .confirmation-prompt > p { font-size: 14px; text-align: center; }
+    .confirmation-buttons{ width: 100%; }
+
+    #confirmDeleteBtn > h5{font-size: 12px; }
+    #cancelBtn > h5{font-size: 12px; }
+}
+
+@media (max-width: 380px){
+    .noteTitle{ padding-inline: .2rem; }
+    .noteTitle > h3{ font-size: .7rem; }
+
+    .confirmation-prompt{ 
+        width: 95%;
+        height: 25%; 
+        padding: 5px;
+    }
+    .confirmation-prompt.confirmation-prompt.prompt-active{ top: 20%; }
+    .confirmation-prompt > p { font-size: 12px;}
+    
+}
+

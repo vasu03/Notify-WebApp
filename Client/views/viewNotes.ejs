@@ -1,0 +1,46 @@
+<section class="viewNotes-section flex">
+    <div class="viewNotes-container flex-column">
+        <!-- Kind of Header showing Title of Note -->
+        <div class="noteTitle flex">
+            <h3>DASHBOARD / <%= note.title %></h3>
+            <div class="actionBtn flex">
+                <button class="flex" aria-label="Delete Note" id="deleteBtn">
+                    <ion-icon name="trash-outline"></ion-icon>
+                    <h5>Delete</h5>
+                </button>
+            </div>
+        </div>
+
+        <!-- Editor Area for the Note content -->
+        <div class="note-output flex">
+            <form action="/dashboard/item/<%= noteID %>?_method=PUT" method="POST" class="note-output-form flex-column">
+                <input type="text" name="title" id="title" value="<%= note.title %>" placeholder="Note Title...">
+                <textarea name="body" id="body" placeholder="Note Text..." rows="12"><%= note.body %></textarea>
+                <div class="actionBtn">
+                    <button type="submit" class="flex" aria-label="Update Note" id="updateBtn">
+                        <ion-icon name="checkmark-circle-outline"></ion-icon>    
+                        <h5>Update</h5>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation overlay and prompt for Deleting a note-->
+    <div id="confirmationOverlay" class="confirmation-overlay"></div>
+    <div id="confirmationPrompt" class="confirmation-prompt flex-column">
+        <p>Are you sure you want to delete the note titled as <b><%= note.title %></b></p>
+        <div class="confirmation-buttons flex">
+            <form action="/dashboard/item-delete/<%= noteID %>?_method=DELETE" method="POST">
+                <button type="submit" id="confirmDeleteBtn" class="flex">
+                    <ion-icon name="trash-outline"></ion-icon>
+                    <h5>Delete</h5>
+                </button>
+            </form>
+                <button id="cancelBtn" class="flex">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                    <h5>Cancel</h5>
+                </button>
+        </div>
+    </div>
+</section>
