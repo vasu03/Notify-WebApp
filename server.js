@@ -20,7 +20,7 @@ const app = express();
 
 // Setting up the Sessions for the app
 app.use(session({
-  secret: 'Top-secret-key',
+  secret: process.env.GOOGLE_CLIENT_SECRET,
   resave: false,
   saveUninitialized: true,
   store: MongoStore.create({
@@ -34,6 +34,7 @@ app.use(session({
 // Setting up the Passport module for login purpose
 app.use(passport.initialize());
 app.use(passport.session());
+app.enable("trust proxy");
 
 
 // Setting up express middlewares

@@ -2,15 +2,30 @@
     <%- include('partials/leftNavbar') %>
     <div class="dash-container main-container flex-column">
         <% if(userName){ %>
+            <!-- If no notes exist for a user then show Add First Note Message -->
+            <% if(notes.length <= 0) {%>
+                <div class="dash-create-first-note flex">
+                    <div class="dash-create-first-note-illus flex"></div>
+                    <div class="dash-creat-first-note-text-btn flex-column">
+                        <h2>
+                            Don't have any notes yet ?<br>
+                            Start here by adding your first Note...
+                        </h2>
+                        <a href="/addNote" class="add-notes-btn flex">+ Your First Note</a>
+                    </div>
+                </div>
+            <% } %>
+
+            <!-- Show the notes if they exist for specific a user -->
+            <% if(notes.length > 0) { %>
             <div class="dash-notes-cont flex-column">
-                <% if(notes.length > 0) { %>
                     <div class="dash-search-add-cont flex">
                         <form action="POST" class="navigation-form flex" role="search" action="/dashboard/search">
                             <input type="search" name="searchTerm" placeholder="Search Here ...." aria-label="SearchBox">
                         </form>
                         <a href="/addNote" class="add-notes-btn">+ Add Notes</a>
                     </div>
-                <% } %>
+                
                 <div class="notes-cont flex">
                     <!-- start of if-else for notes showing -->
                     <% if(notes.length > 0) { %>        <!--notes.length > 0 -->
@@ -22,21 +37,11 @@
                                 </a>
                             </div>
                         <% }); %> 
-                    <% } else { %>
-                        <div class="dash-create-first-note flex">
-                            <div class="dash-create-first-note-illus flex"></div>
-                            <div class="dash-creat-first-note-text-btn flex-column">
-                                <h2>
-                                    Don't have any notes yet ?<br>
-                                    Start here by adding your first Note...
-                                </h2>
-                                <a href="/addNote" class="add-notes-btn flex">+ Your First Note</a>
-                            </div>
-                        </div>
-                    <% } %> 
+                     <% } %>
                     <!-- end of if-else -->
                 </div>
             </div>
+            <% } %>
     
             <div class="dash-page-nav-cont flex">
                 <!-- Check if there are any notes available -->

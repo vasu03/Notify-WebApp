@@ -2,7 +2,6 @@
     display: flex;
     width: 100vw;
     height: max-content;
-    /* background: linear-gradient(-60deg ,rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url("/img/BG_Home_DesktopScreen.png"); */
     background-color: rgba(143, 206, 218, 0.05);
     background-size: cover;
     background-position: center;
@@ -47,14 +46,12 @@ header.move-up{
 }
 
 .top-nav{
-    /* border: 2px dashed black; */
     height: max-content;
     width: 60%;
     align-items: center;
     justify-content: center;
 }
 .top-nav-list{
-    /* border: 2px dashed yellow; */
     list-style: none;
     width: 100%;
     align-items: center;
@@ -90,7 +87,6 @@ header.move-up{
     width: 100%;
 } 
 .home-container{
-    /* border: 2px dashed blue; */
     width: inherit;
     height: 100%;
     justify-content: space-evenly;
@@ -98,13 +94,10 @@ header.move-up{
 
 .home-cont-text{
     width: max-content;
-    /* border: 2px dashed red; */
     justify-content: center;
 }
-.notify-banner{
-    width: 100%;
-    /* border: 2px dashed blue; */
-}
+.notify-banner{ width: 100%; }
+
 .notify-banner > h1{
     font-family: 'Kalnia', serif;
     color: var(--royal-blue);
@@ -146,7 +139,6 @@ header.move-up{
     background-position: center;
     background-size: cover;
     justify-content: center;
-    /* border: 2px dashed red; */
     width: 35%;
     aspect-ratio: 1;
 }
@@ -179,7 +171,6 @@ header.move-up{
     }
 }
 .left-nav-logo-close{
-    /* border: 2px dashed red; */
     width: 100%;
     justify-content: space-around;
 }
@@ -195,7 +186,6 @@ header.move-up{
 }
 .left-nav-list{
     flex-direction: column;
-    /* border: 2px dashed green; */
     list-style: none;
     width: 100%;
     height: 50%;
@@ -216,7 +206,6 @@ header.move-up{
     width: 90%;
     justify-content: center;
     align-items: flex-start;
-    /* border: 2px dashed green; */
     height: max-content;
 }
 .left-nav-list-elem > .left-nav-link-list{
@@ -237,7 +226,6 @@ header.move-up{
     color: var(--space-blue);
 }
 .profile-info{
-    border: 2px dashed blue;
     width: 100%;
     height: max-content;
     position: relative;
@@ -250,7 +238,6 @@ header.move-up{
     border-block-end: 1px solid var(--steel-blue);
 }
 .profile-pic{
-    /* border: 2px dashed red; */
     width: 3rem;
     aspect-ratio: 1;
     border-radius: 50%; 
